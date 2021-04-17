@@ -1,0 +1,56 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Login Page</title>
+
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <!-- Custom styles -->
+        <link href="css/login.css" rel="stylesheet">
+
+        <!-- reCAPTCHA Libary -->
+        <script src='https://www.google.com/recaptcha/api.js?hl=en'></script>
+    </head>
+    <body class="text-center">
+
+        <form action="login" method="POST" class="form-signin">
+            <img class="mb-4" src="img/building.svg" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">Booking.vn</h1>
+
+            <!-- Email Address field -->
+            <label for="inputEmail" class="sr-only">email address</label>
+            <input type="text" name="txtEmail" value="" id="inputEmail" class="form-control" placeholder="email address" required autofocus/>
+
+            <!-- Password field -->
+            <label for="inputPassword" class="sr-only">password</label>
+            <input type="password" name="txtPassword" value="" id="inputPassword" class="form-control" placeholder="password" required/>
+
+            <!-- reCAPTCHA field -->
+            <div class="captcha">
+                <div class="g-recaptcha mb-2" data-sitekey="6Le-wt4ZAAAAALZZ3BoGxuIV0va1-SgaWMY8zL_-" data-callback="removeFakeCaptcha"></div>
+                <input type="checkbox" class="captcha-fake-field" tabindex="-1" required>
+            </div>
+
+            <!-- Button submit -->
+            <input class="btn btn-lg btn-primary btn-block" type="submit"/>
+
+            <div class="mt-3">
+                <a href="forgot-password-page">Forgot password?</a><br/>
+            </div>
+
+            <div class="py-3">
+                Not registered? <a href="register-page">Create an account</a>
+            </div>            
+        </form>
+
+        <script>
+            window.removeFakeCaptcha = function () {
+                document.querySelector('.captcha-fake-field').remove();
+            }
+        </script>
+    </body>
+</html>
